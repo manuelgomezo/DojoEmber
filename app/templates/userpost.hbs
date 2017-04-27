@@ -1,0 +1,21 @@
+<div class="jumbo">
+  <h2>Posts de usuarios</h2>
+  {{#link-to 'index' class="btn btn-warning"}}
+    Volver al index
+  {{/link-to}}
+  {{#each model as |post|}}
+  <article class="listing">
+    <span></span>
+    <h3>{{post.id}}</h3>
+    <h5>{{post.title}}</h5>
+    <div class="detail owner">
+      {{post.body}}
+    </div>
+    {{#link-to 'detail' post.id class="btn btn-success"}}
+      Editar
+    {{/link-to}}
+    
+  </article>
+{{/each}}
+</div>
+{{outlet}}
